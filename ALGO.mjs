@@ -1171,6 +1171,7 @@ var walletFallback_WalletConnect = function(WalletConnect, opts) {
   return function() {
     debug("using WalletConnect wallet fallback");
     var wc = new WalletConnect();
+    if (opts.connector) wc.wc = opts.connector;
     return doWalletFallback_signOnly(opts, (function() { return wc.getAddr(); }), (function(ts) { return wc.signTxns(ts); }));
   };
 };
