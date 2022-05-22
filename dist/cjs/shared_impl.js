@@ -380,16 +380,16 @@ function replaceableThunk(thunk) {
     var called = false;
     var res = null;
     function get() {
-        if (!called) {
+        //if (!called) {
             called = true;
             res = thunk();
-        }
+        //}
         return res;
     }
     function set(val) {
-        if (called) {
+        /*if (called) {
             throw Error("Cannot re-set value once already set");
-        }
+        }*/
         res = val;
         called = true;
     }

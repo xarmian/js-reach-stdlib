@@ -822,9 +822,9 @@ var makeProviderByWallet = function (wallet, env) { return __awaiter(void 0, voi
     });
 }); };
 var setWalletFallback = function (wf) {
-    if (!shim_1.window.algorand) {
+    //if (!shim_1.window.algorand) {
         shim_1.window.algorand = wf();
-    }
+    //}
 };
 exports.setWalletFallback = setWalletFallback;
 var checkNetwork = function (ret, eopts) {
